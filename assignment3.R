@@ -1,11 +1,3 @@
-## This function computes the inverse of a matrix given as input.
-## Computing the inverse of a matrix could be time consuming task,
-## so we try to compute the inverse matrix only one time and store
-## it in cache memory to recall it when needed.
-
-## The function makeCacheMatrix receives as input a matrix x, checks
-## if it is invertible (square with determinant !=0) and creates a list
-## of functions to set & get the inverse of the input matrix.
 makeCacheMatrix <- function(x = matrix()) {
         ## A matrix is invertible if it is square with determinant !=0
         # Set inv to NULL
@@ -35,10 +27,6 @@ makeCacheMatrix <- function(x = matrix()) {
         }
 }
 
-
-## The function cacheSolve checks if the inverse of the input matrix already exists
-## in cache memory, otherwise the function calculates the inverse matrix 
-## and returns the result
 cacheSolve <- function(x) {
         # Getting the inverse matrix
         inv <- x$getinv()
@@ -58,4 +46,6 @@ cacheSolve <- function(x) {
                 x$setinv(inv)
                 inv
         }
+        # Check if the returned matrix is the inverse
+        
 }
